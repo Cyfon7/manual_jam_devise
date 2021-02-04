@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: 
-  content: MyText
+  title: Post_one
+  content: MyText_one
+  image: https://lorempixel.com/300/200
+  user: one
 
 two:
-  title: 
-  content: MyText
+  title: Post_two
+  content: MyText_two
+  image: https://lorempixel.com/300/200
+  user: two

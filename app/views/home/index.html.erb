@@ -15,9 +15,16 @@
         </div>
       </div>
       <div class="panel-footer">
-        <button class="btn btn-primary" type="button">
-          Comentarios <span class="badge"><%= post.comments.count %></span>
-        </button></span>
+        <% if current_user %>
+          <button class="btn btn-primary" type="button">
+            Comentarios <span class="badge"><%= post.comments.count %></span>
+          </button>
+          <% if current_user == post.user || current_user.admin %>
+            <%= link_to 'Edit', edit_post_path(post), class:"btn btn-warning"  %>
+          <% end %>
+        <% else %>
+          <%= link_to 'Show', post_path(post), class:"btn btn-primary" %>
+        <% end %>
         Author: <%= post.user.name %>
       </div>
     </div>
