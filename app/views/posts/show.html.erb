@@ -14,7 +14,9 @@
      <!-- Post Content -->
      <p class="lead"><%= @post.content %></p>
      <!-- Comments Form -->
-     <%= render 'comments/form', comment: @comment %>
+     <% if user_signed_in? %>
+      <%= render 'comments/form', comment: @comment %>
+     <% end %>
      <!-- Comments List -->
      <br>
      <h2>Comments:</h2>
