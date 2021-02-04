@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'admin_features/index'
-  get 'admin_features/admin_edit'
+  get 'admin_features/revoke_admin'
+  get 'admin_features/make_admin'
 
   resources :posts do
       resources :comments, shallow: true

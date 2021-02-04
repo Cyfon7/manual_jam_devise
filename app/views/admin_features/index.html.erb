@@ -18,7 +18,11 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.admin %></td>
-        <td><%= link_to 'Edit', admin_features_admin_edit_path(user) %></td>
+        <% if user.admin? %>
+          <td><%= link_to 'Revoke Admin', admin_features_revoke_admin_path(user) %></td>
+        <% else %>
+          <td><%= link_to 'Make Admin', admin_features_make_admin_path(user) %></td>
+        <% end %>
         <td><%= link_to 'Destroy', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
